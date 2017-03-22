@@ -16,10 +16,10 @@
 
 #define LEN 5
 /* Function Prototypes */
-void copy_arr(double ar[], const double ar2[], int n);
-void copy_ptr(double *ar1, const double *ar2, int n);
-//void copy_ptrs(double *ar2, const double *start, const double * end));
-//void show_arr(const double ar[], double n);
+void copy_arr(double ar[],  double ar2[], int n);
+void copy_ptr(double *ar1,  double *ar2, int n);
+void copy_ptrs(double *ar2, double *start, double *end);
+void show_arr(const double ar[], double n);
 
 
 /* Main Program */
@@ -28,36 +28,53 @@ int main (int argc, char *argv[])
 	double source[LEN] = {1.1, 2.2, 3.3, 4.4, 5.5};
 	double target1[LEN];
 	double target2[LEN];
+	double target3[LEN];
 
+	printf("source Array:"); 
+	show_arr(source, LEN);
 	copy_arr(source, target1, LEN);
+	show_arr(target1, LEN);
 	copy_ptr(source, target2, LEN);
+	show_arr(target2, LEN);
+	copy_ptrs(target3, source, source);
+	show_arr(target3, LEN);
+
+
 	return 0;
 }
 
 
 /* Function Defenitions */
 
-void copy_arr(double ar[], const double ar2[], int n)
-{
-	printf("Source Array:");
-	for(int i = 0; i < LEN; i++)
-	{
-		printf(" %.1lf  ", ar[i]); 
-	}
-	printf("\n");
-	
-	return;
-}
-
-void copy_ptr(double *ar1, const double *ar2, int n)
+void copy_arr(double ar[], double ar2[], int n)
 {
 	printf("Copied by Subscript:");
 	for(int i = 0; i < LEN; i++)
 	{
-		printf(" %.1lf ", *ar1);
-		*(ar1++) = *(ar2++);
+		ar2[i] = ar[i]; 
 	}
-	printf("\n");
+	
+	return;
+}
+
+void copy_ptr(double *ar1, double *ar2, int n)
+{
+	printf("Copied by Pointer:");
+	for(int i = 0; i < LEN; i++)
+	{
+		*(ar2++) = *(ar1++);
+	}
+
+	return;
+}
+
+void copy_ptrs(double *ar2, double *start, double *end)
+{
+	printf("Copied using pointer range:");
+	//while(  )
+	{
+		*(ar2++) = *(start++);
+	}
 
 	return;
 }
@@ -66,4 +83,12 @@ void copy_ptr(double *ar1, const double *ar2, int n)
 
 
 
-
+void show_arr(const double ar[], double n)
+{
+	for(int i = 0; i < LEN; i++)
+	{
+		printf(" %.1lf ", ar[i]);
+	}
+	printf("\n");
+	return;
+}
