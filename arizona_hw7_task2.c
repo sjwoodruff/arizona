@@ -25,9 +25,9 @@ void MaxMin(int numvals, int vals[], int* min, int* max);
 int main(int argc, char *argv[])
 {
 	srand(time(NULL));
-	int randval[MAXNUM] = {rand(),1,2,3,4,5,6,7,8,9}; 
+	int randval[MAXNUM] = {10 + rand() % 90,10 + rand() % 90,10 + rand() % 90,10 + rand() % 90,10 + rand() % 90,10 + rand() % 90,10 + rand() % 90,10 + rand() % 90,10 + rand() % 90,10 + rand() % 90}; 
 
-	printf("Generating random list \n\n");
+	printf("\nGenerating random list \n\n");
 	printf("This list is: \n\n");
 	for (int i = 0; i < MAXNUM; i++)
 	{
