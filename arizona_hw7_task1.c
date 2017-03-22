@@ -71,9 +71,10 @@ void copy_ptr(double *ar1, double *ar2, int n)
 void copy_ptrs(double *ar2, double *start, double *end)
 {
 	printf("Copied using pointer range:");
-	//while(  )
+	
+	while(*start <= *end)
 	{
-		*(ar2++) = *(start++);
+			*(ar2++) = *(start++);
 	}
 
 	return;
