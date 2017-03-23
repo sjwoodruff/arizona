@@ -8,7 +8,7 @@
  *        Version:  1.0
  *        Created:  03/16/2017 04:21:37 PM
  *       Compiler:  gcc -Wall -Werror
- *         Author:  Sterling Woodruff (), sterlingwoodruff@mail.weber.edu
+ *         Author:  Sterling Woodruff Adam Lee, sterlingwoodruff@mail.weber.edu
  * =====================================================================================
  */
 #include <stdio.h>		/* For Standard I/O */
@@ -50,7 +50,7 @@ int main (int argc, char *argv[])
 void copy_arr(double ar[], double ar2[], int n)
 {
 	printf("Copied by Subscript:");
-	for(int i = 0; i < LEN; i++)
+	for(int i = 0; i < n; i++)
 	{
 		ar2[i] = ar[i];
 	}
@@ -61,7 +61,7 @@ void copy_arr(double ar[], double ar2[], int n)
 void copy_ptr(double *ar1, double *ar2, int n)
 {
 	printf("Copied by Pointer:");
-	for(int i = 0; i < LEN; i++)
+	for(int i = 0; i < n; i++)
 	{
 		*(ar2++) = *(ar1++);
 	}
@@ -85,7 +85,7 @@ void copy_ptrs(double *ar2, double *start, double *end)
 
 void show_arr(const double ar[], double n)
 {
-	for(int i = 0; i < LEN; i++)
+	for(int i = 0; i < n; i++)
 	{
 		printf(" %.1lf ", ar[i]);
 	}
