@@ -8,7 +8,7 @@
  *        Version:  1.0
  *        Created:  03/16/2017 04:23:57 PM
  *       Compiler:  gcc -Wall -Werror
- *         Author:  Adam Lee (), Adamlee1@mail.weber.edu
+ *         Author:  Adam Lee & Sterling Woodruff, Adamlee1@mail.weber.edu
  * =====================================================================================
  */
 #include <stdio.h>		/* For Standard I/O */
