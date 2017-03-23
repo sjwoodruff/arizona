@@ -18,7 +18,7 @@
 /* Function Prototypes */
 void copy_arr(double ar[], double ar2[], int n);
 void copy_ptr(double *ar1, double *ar2, int n);
-void copy_ptrs(double *ar2,const double *start,const double *end);
+void copy_ptrs(double *ar2, double *start, double *end);
 void show_arr(const double ar[], double n);
 
 
@@ -29,7 +29,7 @@ int main (int argc, char *argv[])
 	double target1[LEN];
 	double target2[LEN];
 	double target3[LEN];
-	printf("%ld size of source", sizeof(source));
+	double end[sizeof(source)/8];
 
 	printf("source Array:"); 
 	show_arr(source, LEN);
@@ -37,7 +37,7 @@ int main (int argc, char *argv[])
 	show_arr(target1, LEN);
 	copy_ptr(source, target2, LEN);
 	show_arr(target2, LEN);
-	copy_ptrs(target3, source, source);
+	copy_ptrs(target3, source, end);
 	show_arr(target3, LEN);
 
 
@@ -69,7 +69,7 @@ void copy_ptr(double *ar1, double *ar2, int n)
 	return;
 }
 
-void copy_ptrs(double *ar2,const double *start,const double *end)
+void copy_ptrs(double *ar2, double *start, double *end)
 {
 	printf("Copied using pointer range:");
 	
